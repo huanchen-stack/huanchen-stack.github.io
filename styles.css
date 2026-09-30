@@ -58,8 +58,8 @@ h1 { margin: 0 0 18px; font-size: clamp(35px, 5vw, 49px); letter-spacing: -.035e
 .links a { font-size: 14px; font-weight: 600; }
 
 section { padding-block: 29px; border-top: 1px solid var(--line); scroll-margin-top: 20px; }
-.section-layout { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 28px; }
-.section-heading h2 { margin: 0; font-size: 22px; letter-spacing: -.018em; white-space: nowrap; }
+.section-layout { display: grid; grid-template-columns: 185px minmax(0, 1fr); gap: 28px; }
+.section-heading h2 { margin: 0; font-size: 22px; letter-spacing: -.018em; }
 .section-heading p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
 .section-content { min-width: 0; }
 
@@ -96,7 +96,7 @@ section { padding-block: 29px; border-top: 1px solid var(--line); scroll-margin-
 
 footer { border-top: 1px solid var(--line); padding-block: 19px 28px; color: var(--muted); font-size: 12px; }
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   .container { width: min(calc(100% - 32px), var(--width)); }
   .site-header .container { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 12px; gap: 4px; }
   .nav { gap: 4px 16px; }
