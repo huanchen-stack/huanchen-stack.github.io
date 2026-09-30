@@ -47,7 +47,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 .nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
 .nav a:hover { color: var(--link); text-decoration: underline; }
 
-.hero { padding-block: 38px 30px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 215px; gap: 32px; align-items: start; padding-block: 38px 30px; }
+.hero-copy { min-width: 0; }
+.portrait { width: 215px; height: 260px; margin: 0; overflow: hidden; background: #dce4e6; }
+.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5); transform-origin: 50% 70%; }
 .eyebrow { margin: 0 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .025em; }
 h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.26; }
 h1 { margin: 0 0 18px; font-size: clamp(35px, 5vw, 49px); letter-spacing: -.035em; }
@@ -102,6 +105,8 @@ footer { border-top: 1px solid var(--line); padding-block: 19px 28px; color: var
   .site-header .container { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 12px; gap: 4px; }
   .nav { gap: 4px 16px; }
   .hero { padding-block: 33px 30px; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .portrait { width: 185px; height: 220px; }
   .section-layout { grid-template-columns: 1fr; gap: 12px; }
   .section-heading h2 { font-size: 21px; }
   .news-list li { grid-template-columns: 80px minmax(0, 1fr); }
