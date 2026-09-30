@@ -3,21 +3,192 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GitHub Pages Test</title>
+  <meta name="description" content="Huanchen Sun is a Ph.D. student in computer science at USC researching systems for machine learning and efficient AI.">
+  <meta name="theme-color" content="#0c1424">
+  <meta property="og:title" content="Huanchen Sun">
+  <meta property="og:description" content="Ph.D. student at USC working on systems for machine learning and efficient AI.">
+  <meta property="og:type" content="website">
+  <title>Huanchen Sun</title>
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 680px;
-      margin: 12vh auto;
-      padding: 0 24px;
-      line-height: 1.6;
-      color: #243047;
+    :root {
+      color-scheme: dark;
+      --bg: #0c1424;
+      --surface: #111d31;
+      --text: #eef1f8;
+      --muted: #aab5c9;
+      --line: #2a3850;
+      --accent: #a7bfff;
+      --accent-soft: #1c2d4d;
+      --width: 1040px;
     }
-    h1 { color: #176b4d; }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:hover { color: #d5e0ff; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+    .container { width: min(calc(100% - 3rem), var(--width)); margin-inline: auto; }
+    .skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 10; padding: .6rem .9rem; background: var(--text); color: var(--bg); }
+    .skip-link:focus { top: 1rem; }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 78px; }
+    .brand { color: var(--text); font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .nav { display: flex; flex-wrap: wrap; gap: .35rem 1.45rem; }
+    .nav a { color: var(--muted); font-size: .9rem; text-decoration: none; }
+    .nav a:hover { color: var(--text); text-decoration: underline; }
+    .hero { padding-block: clamp(4rem, 10vw, 7.5rem) clamp(4rem, 9vw, 7rem); }
+    .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.18; }
+    h1 { margin: 0 0 1.4rem; font-size: clamp(3.7rem, 8vw, 6.8rem); letter-spacing: -.055em; }
+    .lede { max-width: 770px; margin: 0; color: var(--text); font-size: clamp(1.17rem, 2.3vw, 1.42rem); line-height: 1.65; }
+    .bio { max-width: 770px; margin: 1.25rem 0 0; color: var(--muted); font-size: 1.04rem; }
+    .links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2rem; }
+    .links a { display: inline-flex; align-items: center; min-height: 43px; padding: .5rem .9rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); font-size: .91rem; font-weight: 600; text-decoration: none; }
+    .links a:hover { border-color: var(--accent); background: var(--accent-soft); }
+    section { padding-block: clamp(3.2rem, 6vw, 5rem); border-top: 1px solid var(--line); scroll-margin-top: 2rem; }
+    .section-layout { display: grid; grid-template-columns: minmax(165px, 1fr) minmax(0, 3fr); gap: 2rem 3.25rem; }
+    .section-heading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.45rem); letter-spacing: -.025em; }
+    .section-heading p { margin: .8rem 0 0; color: var(--muted); font-size: .92rem; }
+    .section-content { min-width: 0; }
+    .news-list { margin: 0; padding: 0; list-style: none; }
+    .news-list li { display: grid; grid-template-columns: 7.2rem 1fr; gap: .8rem 1.25rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+    .news-list li:first-child { padding-top: 0; }
+    .news-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .date { color: var(--accent); font-size: .87rem; font-weight: 700; white-space: nowrap; }
+    .news-list p { margin: 0; color: var(--muted); }
+    .news-list a { color: var(--text); }
+    .group-title { margin: 0 0 1.2rem; color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .publication { padding: 0 0 1.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid var(--line); }
+    .publication:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+    .publication h3 { margin: 0 0 .5rem; font-size: clamp(1.25rem, 2.2vw, 1.6rem); }
+    .publication h3 a { color: var(--text); text-decoration: none; }
+    .publication h3 a:hover { color: var(--accent); text-decoration: underline; }
+    .authors, .venue, .paper-links { margin: .27rem 0 0; }
+    .authors { color: var(--text); }
+    .authors strong { padding: .1rem .25rem; border-radius: 3px; background: var(--accent-soft); font-weight: 750; white-space: nowrap; }
+    .venue { color: var(--muted); }
+    .paper-links { font-size: .92rem; font-weight: 650; }
+    .badge { display: inline-block; padding: .1rem .5rem; border: 1px solid #5c6c9b; border-radius: 4px; color: #ced9ff; font-size: .83rem; font-weight: 700; }
+    .research-card { padding: 1.4rem 1.6rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .research-card h3 { margin: 0 0 .5rem; font-size: 1.45rem; }
+    .research-card p { margin: 0; color: var(--muted); }
+    .education-list { margin: 0; padding: 0; list-style: none; }
+    .education-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .95rem 0; border-bottom: 1px solid var(--line); }
+    .education-list li:first-child { padding-top: 0; }
+    .education-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .degree { font-weight: 650; }
+    .school { display: block; color: var(--muted); font-size: .94rem; font-weight: 400; }
+    .years { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+    footer { padding-block: 2rem 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    @media (max-width: 700px) {
+      .site-header .container { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 1rem; gap: .45rem; }
+      .section-layout { grid-template-columns: 1fr; gap: 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(calc(100% - 2rem), var(--width)); }
+      .nav { gap: .25rem 1rem; }
+      .news-list li { grid-template-columns: 1fr; gap: .1rem; }
+      .education-list li { display: block; }
+      .years { display: block; margin-top: .2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <h1>GitHub Pages is working! 🎉</h1>
-  <p>If you can see this page at your username.github.io address, your site is published successfully.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">Huanchen Sun</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="hero" id="top">
+      <p class="eyebrow">Ph.D. student · University of Southern California</p>
+      <h1>Huanchen Sun</h1>
+      <p class="lede">I’m a third-year Ph.D. student in computer science at the University of Southern California, advised by <a href="https://seojinpark.net/">Prof. Seo Jin Park</a>. My research focuses on systems for machine learning and efficient AI.</p>
+      <p class="bio">Previously, I worked with <a href="https://www.harsha.usc.edu/">Prof. Harsha V. Madhyastha</a> on web systems. Before starting my Ph.D., I earned my master’s and bachelor’s degrees from the University of Michigan, graduating <i>summa cum laude</i> with my bachelor’s degree.</p>
+      <div class="links" aria-label="Contact and profiles">
+        <a href="mailto:huanchen@usc.edu">Email ↗</a>
+        <a href="https://www.linkedin.com/in/huanchen-sun-3378a3229/">LinkedIn ↗</a>
+        <a href="https://github.com/huanchen-stack">GitHub ↗</a>
+        <a href="https://scholar.google.com/citations?user=zHOLnpMAAAAJ&amp;hl=en">Google Scholar ↗</a>
+      </div>
+    </div>
+
+    <section id="news" class="section-layout" aria-labelledby="news-heading">
+      <div class="section-heading"><h2 id="news-heading">News</h2></div>
+      <div class="section-content">
+        <ul class="news-list">
+          <li><span class="date">Sep 2026</span><p><a href="https://arxiv.org/abs/2608.14863">DDBench</a> was accepted to the NeurIPS 2026 Evaluations &amp; Datasets Track.</p></li>
+          <li><span class="date">May 2026</span><p>Our <a href="https://www.usenix.org/conference/nsdi26/presentation/zhu-jingyuan">NSDI 2026 paper</a> received a Community Award.</p></li>
+          <li><span class="date">May 2026</span><p>Our paper on detecting and diagnosing errors in archived web pages appeared at <a href="https://www.usenix.org/conference/nsdi26/presentation/zhu-jingyuan">NSDI 2026</a>.</p></li>
+          <li><span class="date">Oct 2025</span><p>Our short paper on efficiency and fidelity in web archives appeared at <a href="https://conferences.sigcomm.org/imc/2025/program/">IMC 2025</a>.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications" class="section-layout" aria-labelledby="publications-heading">
+      <div class="section-heading"><h2 id="publications-heading">Publications</h2><p>My name is highlighted in each author list.</p></div>
+      <div class="section-content">
+        <p class="group-title">To appear</p>
+        <article class="publication">
+          <h3><a href="https://arxiv.org/abs/2608.14863">DDBench: A Benchmark for Agentic Debugging on Distributed Systems</a></h3>
+          <p class="authors">Yibo Yan, Huijuan Wang, Junzhou He, Yizhuo Liang, Shaoyu Wang, <strong>Huanchen Sun</strong>, Seo Jin Park</p>
+          <p class="venue">NeurIPS 2026 · Evaluations &amp; Datasets Track · December 2026</p>
+          <p class="paper-links"><a href="https://arxiv.org/abs/2608.14863">Preprint ↗</a></p>
+        </article>
+        <p class="group-title">Published</p>
+        <article class="publication">
+          <h3><a href="https://www.usenix.org/conference/nsdi26/presentation/zhu-jingyuan">Detecting and Diagnosing Errors in Serving Archived Web Pages</a></h3>
+          <p class="authors">Jingyuan Zhu, <strong>Huanchen Sun</strong>, Harsha V. Madhyastha</p>
+          <p class="venue">NSDI 2026 · <span class="badge">Community Award</span></p>
+          <p class="paper-links"><a href="https://www.usenix.org/system/files/nsdi26-zhu-jingyuan.pdf">Paper ↗</a> · <a href="https://github.com/USC-NSL/FidEx">Code ↗</a></p>
+        </article>
+        <article class="publication">
+          <h3><a href="https://doi.org/10.1145/3730567.3764507">Toward Better Efficiency vs. Fidelity Tradeoffs in Web Archives</a></h3>
+          <p class="authors">Jingyuan Zhu, <strong>Huanchen Sun</strong>, Harsha V. Madhyastha</p>
+          <p class="venue">IMC 2025 · Short paper</p>
+          <p class="paper-links"><a href="https://doi.org/10.1145/3730567.3764507">Paper ↗</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section-layout" aria-labelledby="research-heading">
+      <div class="section-heading"><h2 id="research-heading">Current research</h2></div>
+      <div class="section-content">
+        <div class="research-card">
+          <h3>Efficient Quantized Rollouts</h3>
+          <p>I’m exploring precision scheduling to make quantized rollouts more efficient.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-layout" aria-labelledby="education-heading">
+      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
+      <div class="section-content">
+        <ul class="education-list">
+          <li><div class="degree">Ph.D. in Computer Science<span class="school">University of Southern California</span></div><span class="years">2024–present</span></li>
+          <li><div class="degree">Master’s degree<span class="school">University of Michigan</span></div><span class="years">2022–2024</span></li>
+          <li><div class="degree">Bachelor’s degree, <i>summa cum laude</i><span class="school">University of Michigan</span></div><span class="years">2018–2022</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© 2026 Huanchen Sun · <a href="mailto:huanchen@usc.edu">Get in touch</a></div></footer>
 </body>
 </html>
