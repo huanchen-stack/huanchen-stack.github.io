@@ -85,7 +85,7 @@ section { padding-block: 29px; border-top: 1px solid var(--line); scroll-margin-
 .authors strong { padding: 1px 3px; background: var(--highlight); font-weight: 700; white-space: nowrap; }
 .venue { color: var(--muted); font-size: 13px; }
 .paper-links { font-size: 13px; }
-.badge { font-weight: 700; color: #205c49; }
+.badge { font-weight: 700; font-style: italic; color: #205c49; }
 
 .research-card { padding-left: 0; border-left: 0; }
 .research-card h3 { margin: 0 0 3px; font-size: 17px; }
